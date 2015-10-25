@@ -1,0 +1,23 @@
+(1) Team Name:
+	(Blank)
+
+(2) Members
+ - Haoran Luo, 1300013017@pku.edu.cn, School of EECS, Peking University, Bachelor's program
+ - Shuyang Shi, shuyang790@hotmail.com, School of EECS, Peking University, Bachelor's program
+ - Xingyu Lin, 503827623@qq.com, School of EECS, Peking University, Bachelor program
+ 
+(3) Supervisor Name: 
+	None.
+
+(4) Summary of Techniques
+ - Query Type 1:
+	Set up a weighted graph according to the input, then use bidirectional breadth first search to solve the problem.
+ - Query Type 2:
+	Sort the queries by date. Keep a Disjoint Set for each tag. Then in the order of birthday, add persons to each tag’s Disjoint Set one by one. Finally find the largest k ones.
+ - Query Type 3:	
+	Build an index tree for places to quickly find the relevant person for a query.	Using breadth first search to search all neighbours within h-hops of relevant persons. Sort the interest tags to calculate similar tags of two persons in linear time.
+ - Query Type 4:
+	The basic idea is to compute the exact closeness of the vertices in the descending order of the probability of belong to the top-k vertices, where the exact closeness centrality computation is implemented by WFS(width first search). Previously, using the 2-hop neighbours and direct neighbours to give out upper bounds of centrality. Each time, choose the best vertex in the candidate set, and if its closeness centrality(upper bound or exact value) is less than anyone in the answer set, the algorithm quits. Otherwise, either the vertex's exact closeness centrality will be computed, or in case of its exact centrality already computed, move it to the answer set.
+
+(5) Third Party Code:
+	None.
